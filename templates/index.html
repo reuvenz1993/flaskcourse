@@ -11,6 +11,13 @@
         <form method="post">
             {{ form.hidden_tag() }}
             {{ form.breed.label }} {{ form.breed() }}
+            {{ form.neu.label }} {{ form.neu() }}
+            {{ form.mood.label }} {{ form.mood() }}
+            {{ form.food.label }} {{ form.food() }}
+            <br>
+            any other feedback ?
+            <br>
+            {{ form.feedback() }}
             {{ form.submit() }}
 
 
