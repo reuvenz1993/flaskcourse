@@ -4,16 +4,17 @@
     </head>
 
     <body>
-        {% if username %}
-            your username is : {{username}}
+        {% if breed %}
+            your breed is : {{breed}}
         {% endif %}
 
         <form method="post">
-            {form}
+            {{ form.hidden_tag() }}
+            {{ form.breed.label }} {{ form.breed() }}
+            {{ form.submit() }}
 
 
         </form>
-        
 
 
 

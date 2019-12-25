@@ -13,23 +13,33 @@ app=Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
 
 class loginForm(FlaskForm):
-    username = StringField('enter username')
-    password = StringField('enter password')
-    email = StringField('enter password')
-    submit = SubmitField(label="click to submit")
+    breed = StringField('What breed are you?' , validators=[DataRequired()] )
+    neu = BooleanField("have you been new ?")
+    mood = RadioField("what is the mood ?", choices=[('mood one', 'happy'),('mood two', 'great') , ('mood three', 'ok') , ('mood four', 'bad') ])
+    food = SelectField (u'Pick your favorite food:' , choices=[('fish', 'fish'),('beef', 'beef') , ('corn', 'corn')  ] )
+    feedback = TextAreaField()
+    submit = SubmitField("Submit")
     
     
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    username = False
+    breed = False
     form = loginForm()
     
     if form.validate_on_submit():
-        session['username'] = form.username.data
-        flash(f"You just changed your username to: {session['username']}")
-        return redirect(url_for("index"))
+        session['breed'] = form.breed.data
+        session['neu'] = form.neu.data
+        session['mood'] = form.mood.data
+        session['food'] = form.food.data
+        session['feedback'] = form.feedback.data
+        breed = form.breed.data
+        form.breed.data = ''
+        return redirect (url_for('thankyou'))
     
-    return render_template('index.html' , form = form , username = username )
+    return render_template('index.html' , form = form )
+
+@app.route('/', methods=['GET', 'POST'])
+def thankyou():
 
 
 if __name__ == '__main__':
