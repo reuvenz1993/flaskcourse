@@ -6,6 +6,7 @@ from wtforms import (StringField, BooleanField, DateTimeField,
 from wtforms.validators import DataRequired
 import os
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 #__file__ = python file name
@@ -18,10 +19,24 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'mysecretkey'
 
 db = SQLAlchemy(app)
+Migrate(app,db)
 
 class Puppy(db.Model):
-    id = (db.Integer, primary)
+    id = db.Column(db.Integer,primary_key=True)
+    # Puppy name
+    name = db.Column(db.Text)
+    # Puppy age in years
+    age = db.Column(db.Integer)
 
+    # This sets what an instance in this table will have
+    # Note the id will be auto-created for us later, so we don't add it here!
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+
+    # This is the string representation of a puppy in the model
+    def __repr__(self):
+        return f"Puppy {self.name} is {self.age} years old."
 
 
 class loginForm(FlaskForm):
