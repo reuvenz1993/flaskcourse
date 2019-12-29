@@ -29,6 +29,7 @@
           <div id='Sports' class="card category" style="width: 18rem;">
             <img src="{{url_for('static',filename='img/sports.jfif')}}" class="card-img-top" alt="...">
             <div class="card-body">
+                <h5 class="card-title">Sports</h5>
             </div>
           </div>
 
@@ -37,24 +38,28 @@
     </div>
 
     <div id="game" class="container">
-        <div class="row">
-            <h2>Question : </h2>
-            <h4>the Question </h4>
-        </div>
+        <div class="col-6 centered">
+            <div class="row">
+                <h2> category : </h2>
+                <h2 id='selected_category'></h2>
+            </div>
+            <div class="row">
+                <h2>Question : </h2>
+            </div>
 
-        <div class="row">
-            <h4>the Question </h4>
-        </div>
+            <div class="row">
+                <h4>the Question </h4>
+            </div>
 
-        <div class="row">
-            <h3>Answers :</h3>
-            <br>
-            <button type="button" class="btn btn-primary btn-lg btn-block answer">Block level button</button>
-            <button type="button" class="btn btn-primary btn-lg btn-block answer">Block level button</button>
-            <button type="button" class="btn btn-primary btn-lg btn-block answer">Block level button</button>
-            <button type="button" class="btn btn-primary btn-lg btn-block answer">Block level button</button>
+            <div class="row">
+                <h3>Answers :</h3>
+                <br>
+                <button type="button" class="btn btn-lg btn-block answer">Block level button</button>
+                <button type="button" class="btn btn-lg btn-block answer">Block level button</button>
+                <button type="button" class="btn btn-lg btn-block answer">Block level button</button>
+                <button type="button" class="btn btn-lg btn-block answer">Block level button</button>
+            </div>
         </div>
-
     </div>
 
     <script type="text/javascript" src="{{url_for('static',filename='js/trivia.js')}}" ></script>

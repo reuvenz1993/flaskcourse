@@ -13,7 +13,21 @@
  border-style: solid;
 };
 
-.answer
+button.answer
 {
- background-color: #eaf2f9;
+ background-color: red;
+};
+
+.button.answer
+{
+ background-color: green;
+ color: yellow;
+ width: 100%
 }
+
+.answer { background-color:#eaf2f9; max-width: 800px;}
+
+.answer:hover {
+    background-color: #053e69;
+    color: white;
+  }
