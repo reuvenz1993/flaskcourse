@@ -1,0 +1,76 @@
+#insert-post {
+    width: 60%;
+    min-height: 5cm;
+    padding: 20px;
+    border-radius: 10px;
+
+
+}
+
+.form-check { display: none;}
+
+#leftside{
+    min-height: 10cm;
+    background-color: #E0E0E0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+div#rightside.col-md-9{
+    min-height: 5cm;
+    padding: 20px;
+    border-radius: 10px;
+    background: aliceblue;}
+
+
+.msgb {
+    width: 90%;
+    min-height: 2cm;
+    background-color: #28e322;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.msgitself {
+    font-weight: bold;
+    float: bottom ;
+    font-size: 20px;
+
+
+}
+
+.newmsg {
+    width: 90%;
+    min-height: 4cm;
+    background-color: #F5F5F5;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-style: solid;
+    border-width: thick;
+    border-color: black;
+    border-radius: 10px;
+    font-size: 22px;
+    
+
+}
+
+.msg-user 
+    {
+
+        font-style: italic;
+
+    }
+
+    .msg-timedate
+    {
+        position: relative;
+        float: top;
+        font-size: 12px;
+    }

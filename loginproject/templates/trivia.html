@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/Trivia.css')}}">
+
+<div class="jumbotron">
+    <h1 class="display-4"> Trivia </h1>
+    <p class="lead">choose category Game.</p>
+
+
+</div>
+
+    <div class="container">
+      <div class="row">
+
+        <div id='General' class="card category" style="width: 18rem;">
+            <img src="{{url_for('static',filename='img/General_Knowledge.jpg')}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">General Knowledge</h5>
+            </div>
+          </div>
+
+          <div id='Science' class="card category" style="width: 18rem;">
+            <img src="{{url_for('static',filename='img/Science.jpg')}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Science & Nature</h5>
+            </div>
+          </div>
+
+          <div id='Sports' class="card category" style="width: 18rem;">
+            <img src="{{url_for('static',filename='img/sports.jfif')}}" class="card-img-top" alt="...">
+            <div class="card-body">
+            </div>
+          </div>
+
+
+      </div>
+    </div>
+
+    <div id="game" class="container">
+        <div class="row">
+            <h2>Question : </h2>
+            <h4>the Question </h4>
+        </div>
+
+        <div class="row">
+            <h4>the Question </h4>
+        </div>
+
+        <div class="row">
+            <h3>Answers :</h3>
+            <br>
+            <button type="button" class="btn btn-primary btn-lg btn-block answer">Block level button</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block answer">Block level button</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block answer">Block level button</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block answer">Block level button</button>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="{{url_for('static',filename='js/trivia.js')}}" ></script>
+
+
+
+  {% endblock %}

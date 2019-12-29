@@ -1,11 +1,209 @@
-{% extends "base.html" %}
-{% block content %}
-<div class="jumbotron">
-  {% if current_user.is_authenticated %}
-    <p>Hi {{ current_user.username }}!</p>
-  {% else %}
-    <p>Please login or register!</p>
-  {% endif %}
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Flask App</title>
+      <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+      <title>Reuven's Website!</title>
+    
+    <style type="text/css">
+      .container {
+        text-align: center;
+        width: 400px;
+        margin-top: 50px;
+        
+      }
+    
+      html { 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-color: aquamarine;
+    }
+    
+    body {
+      background: none;
+    }
+    
+    #login {
+      display: none;
+    }
+    
+    .myButton {
+        background-color:#44c767;
+        border-radius:28px;
+        border:1px solid #18ab29;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:17px;
+        padding:16px 31px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #2f6627;
+    }
+    .myButton:hover {
+        background-color:#5cbf2a;
+    }
+    .myButton:active {
+        position:relative;
+        top:1px;
+    }
+    
+    .sn {
+    font-family: Georgia, serif;
+    color: black;
+    font-size: 30px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    }
+    
+    #sl { font-size: 20px; color: black;}
+    
+    #show_SignUp_form { display: none;}
+    
+    </style>
+  </head>
+  <body>
+    <div class="container">
+<div class="home">
+    {{res}}
+    <br>
+    {{status}}
+      <div class="container">
+    
+        <div id="totoogle1" > <p class ="sn"> Reuven's Website! </p> </div>
+        <div id="error"><?php echo $error; ?></div>
+    
+        <form method="post" id="login">
+          {{ loginform.hidden_tag() }}
+          <div class="form-group row">
+
+              {{ loginform.username.label }} {{ loginform.username() }}
+    
+          </div>
+    
+          <div class="form-group row">
+    
+              {{ loginform.password.label }} {{ loginform.password() }}
+              <a href="forgetpass.php">Forgot my password</a>
+    
+          </div>
+          <div class="form-group form-check">
+    
+            <input type="checkbox" class="form-check-input" name="stayLoggedIn" value='0'>
+            <label id ="sl" class="form-check-label" for="exampleCheck1">Stay logged in</label>
+    
+          </div>
+          <div>
+    
+            <input type="hidden" name="signup" value="0">
+    
+          </div>
+          <div>
+    
+            {{ loginform.submit() }}
+    
+          </div>
+    
+    
+        </form>
+        
+    
+        <br>
+    
+        <p> <a id="show_log_in_form" class="myButton"> Log in </a> </p>
+        <p> <a id="show_SignUp_form" class="myButton"> SignUp </a> </p>
+    
+        <br>
+    
+        <div id="totoogle2" > <p class ="sn"> or sign up! <p> </div>
+    
+        <br>
+    
+        <form method="post" id="signup">
+          {{ signupform.hidden_tag() }}
+          <div class="form-group row">
+
+              {{ signupform.username.label }} {{ signupform.username() }}
+
+          </div>
+          <div class="form-group row">
+
+              {{ signupform.password.label }} {{ signupform.password() }}
+
+          </div>
+          <div class="form-group row">
+
+            {{ signupform.pass_confirm.label }} {{ signupform.pass_confirm() }}
+
+        </div>
+          <div class="form-group row">
+    
+              {{ signupform.email.label }} {{ signupform.email() }}
+    
+          </div>
+    
+          <div>
+
+            <input type="hidden" name="signup" value="1">
+    
+          </div>
+          <div>
+    
+            {{ signupform.submit() }}
+    
+    
+          </div>
+    
+        </form>
+    
+    
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+        <script type="text/JavaScript">
+
+$("#show_log_in_form").click(function() {
+
+  $("#signup").toggle();
+  $("#login").toggle();
+  $("#totoogle1").toggle();
+  $("#totoogle2").toggle();
+  $("#show_SignUp_form").toggle();
+  $("#show_log_in_form").toggle();
+
+});
+
+$("#show_SignUp_form").click(function() {
+
+$("#signup").toggle();
+$("#login").toggle();
+$("#totoogle1").toggle();
+$("#totoogle2").toggle();
+$("#show_SignUp_form").toggle();
+$("#show_log_in_form").toggle();
+
+});
+
+</script>
+
+      </div>
 </div>
 
-{% endblock %}
+    </div>
+  </body>
+</html>
+

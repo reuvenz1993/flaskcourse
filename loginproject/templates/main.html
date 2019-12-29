@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  {% if current_user.is_authenticated %}
+    <h1>Hi {{ current_user.username }}!</h1>
+  {% else %}
+    <h1>Please login or register!</h1>
+  {% endif %}
+    <h1 class="display-4"> test </h1>
+    <p class="lead">This is the main page of the website - see and choose your application.</p>
+    <hr class="my-4">
+    <p>provided by @Reuven_zolo.</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+
+  </div>
+
+    <div id ="apps" class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Trivia Game</h2>
+          <p>Trivia Game <br> use it for secret personal notes</p>
+          <a name="diary" id="diary" class="btn btn-primary" href="{{url_for('trivia')}}" role="button">Go to app</a>
+        </div>
+        <div class="col-md-3">
+          <h2>App - notes</h2>
+          <p>App number 2 - notes <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</p>
+          <a name="diary" id="diary" class="btn btn-primary" href="notes\notes.php" role="button">Go to app</a>
+        </div>
+        <div class="col-md-3">
+          <h2>App - TBD</h2>
+          <p>This is app number 3 - TBD <br> Lorem ipsum dolor sit amet, consectetur.</p>
+          <a name="diary" id="diary" class="btn btn-primary" href="{{url_for('main')}}" role="button">Go to app</a>
+        </div>
+      
+      </div>
+    </div>
+
+  
+
+
+
+  {% endblock %}

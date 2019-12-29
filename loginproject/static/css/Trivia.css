@@ -1,0 +1,19 @@
+.category
+{
+ margin: 30px;
+ cursor: pointer;
+ background-color: #eaf3f0;
+};
+
+#game
+{
+ background-color: lavender;
+ border: 10px;
+ border-radius: 15%;
+ border-style: solid;
+};
+
+.answer
+{
+ background-color: #eaf2f9;
+}
