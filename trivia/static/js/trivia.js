@@ -1,12 +1,13 @@
-/*
 var a = 100
 var q = 1
 category_list =  {"General":9 , "Science":17 , "Sports":21};
 var chosen_category = "";
 var chosen_category_id = ""
 var question = ""
+answers = [ '#ans1' , '#ans2' , '#ans3' , '#ans4' ];
 
 $("#start").hide();
+$("#game").hide();
 
 $(document).ready(function () {
 
@@ -74,20 +75,27 @@ function shuffle(a) {
 $( ".answer" ).click(function(e) {
     console.log(e.target.innerText);
     pick = e.target.innerText;
+    for answer in ()
     if ( pick == question_data['correct_answer'])
     {
         correct = true;
         $('#'+e.target.id).css('background-color' , 'green');
         console.log('this is the right ans');
-    } else {$('#'+e.target.id).css('background-color' , 'red'); };
+    } else 
+    {
+        $('#'+e.target.id).css('background-color' , 'red');
+        for 
+    };
 
+    $('.answer').attr("disabled", true);
     setTimeout(next_question, 2000);
   });
 
   function next_question()
   {
     $('.answer').removeAttr( 'style' );
+    $('.answer').removeAttr( 'disabled' );
     start_trivia(chosen_category_id);
   };
 
-  */
+  

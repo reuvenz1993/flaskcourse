@@ -1,3 +1,4 @@
+
 .category
 {
  margin: 30px;
@@ -5,20 +6,6 @@
  background-color: #eaf3f0;
 }
 
-.wrong_ans
-{
-  background: #FF0000;
-}
-
-
-#game
-{
- background-color: lavender !important;
- border: 10px !important;
- border-radius: 15% !important;
- border-style: solid !important;
- display: none !important;
-}
 
 .selected_category {color: lightgray; text-shadow: antiquewhite; font-style: italic;}
 
