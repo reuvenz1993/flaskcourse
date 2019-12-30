@@ -25,12 +25,12 @@
 
 #promo { max-height: 5cm;}
 
-.correct
+.correct_ans
 {
-  background-color: green
+  background-color: green;
 };
 
-.wrong
+.wrong_ans
 {
-  background-color: red
+  background-color: red;
 };
