@@ -40,3 +40,8 @@ html, body {
   background-color: green;
 }
 
+#start-grid {display: grid;}
+
+#start-padding {padding-bottom: 10%;}
+
+#start-btn {margin-top: 1cm;}

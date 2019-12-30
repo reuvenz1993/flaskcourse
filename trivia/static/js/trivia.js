@@ -1,11 +1,11 @@
 var a = 100
 var q = 1
 category_list =  {"General":9 , "Science":17 , "Sports":21};
-chosen_category = "";
+var chosen_category = "";
 var chosen_category_id = ""
 var question = ""
 
-$("#game").hide();
+$("#game").toggle();
 $("#start").hide();
 
 $(document).ready(function () {
@@ -16,13 +16,22 @@ $(document).ready(function () {
         $("#start").show();
         console.log(e.currentTarget.id);
         chosen_category = e.currentTarget.id;
-        $(".selected_category").html('category : ' + chosen_category);
         chosen_category_id = category_list[chosen_category];
+        $(".selected_category").html('category : ' + chosen_category);
         console.log("id : " + chosen_category_id);
-        start_trivia(chosen_category_id);
 
     });
 
+
+});
+
+$("#start-btn").click(function (e) {
+    e.preventDefault();
+    $("#categories").hide();
+    $("#promo").hide();
+    $("#start").hide();
+    $("#game").show();
+    start_trivia(chosen_category_id);
 });
 
 function start_trivia(id)
@@ -62,7 +71,7 @@ function shuffle(a) {
 };
 
 
-$( ".btn" ).click(function(e) {
+$( ".answer" ).click(function(e) {
     console.log(e.target.innerText);
     pick = e.target.innerText;
     if ( pick == question_data['correct_answer'])
