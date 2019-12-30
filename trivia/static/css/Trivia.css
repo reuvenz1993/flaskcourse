@@ -5,6 +5,11 @@
  background-color: #eaf3f0;
 };
 
+.wrong_ans
+{
+  background: #FF0000;
+};
+
 #game
 {
  background-color: lavender !important;
@@ -30,7 +35,3 @@
   background-color: green;
 };
 
-.wrong_ans
-{
-  background-color: red;
-};

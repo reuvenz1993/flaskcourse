@@ -68,18 +68,16 @@ $( ".btn" ).click(function(e) {
     if ( pick == question_data['correct_answer'])
     {
         correct = true;
-        $('#'+e.target.id).attr("class","btn btn-lg btn-block correct_ans");
+        $('#'+e.target.id).css('background-color' , 'green');
         console.log('this is the right ans');
-    } else {$('#'+e.target.id).attr("class","btn btn-lg btn-block wrong_ans"); };
+    } else {$('#'+e.target.id).css('background-color' , 'red'); };
 
     setTimeout(next_question, 2000);
   });
 
   function next_question()
   {
-    $('#ans1').attr("class","btn btn-lg btn-block answer");
-    $('#ans2').attr("class","btn btn-lg btn-block answer");
-    $('#ans3').attr("class","btn btn-lg btn-block answer");
-    $('#ans4').attr("class","btn btn-lg btn-block answer");
+      
+    $('.answer').removeAttr( 'style' );
     start_trivia(chosen_category_id);
   };
