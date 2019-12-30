@@ -3,12 +3,13 @@
  margin: 30px;
  cursor: pointer;
  background-color: #eaf3f0;
-};
+}
 
 .wrong_ans
 {
   background: #FF0000;
-};
+}
+
 
 #game
 {
@@ -17,7 +18,7 @@
  border-radius: 15% !important;
  border-style: solid !important;
  display: none !important;
-};
+}
 
 #selected_category {color: lightgray; text-shadow: antiquewhite; font-style: italic;}
 
@@ -26,12 +27,12 @@
 .answer:hover {
     background-color: #053e69;
     color: white;
-  };
+  }
 
 #promo { max-height: 5cm;}
 
 .correct_ans
 {
   background-color: green;
-};
+}
 

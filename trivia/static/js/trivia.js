@@ -11,15 +11,14 @@ $("#start").hide();
 $(document).ready(function () {
 
     $('div.card.category').click(function (e) {
-        console.log(e.currentTarget.id);
-        chosen_category = e.currentTarget.id;
-        $("#selected_category").html(chosen_category);
-        chosen_category_id = category_list[chosen_category];
-        console.log("id : " + chosen_category_id);
-        $("#game").show();
         $("#categories").hide();
         $("#promo").hide();
-        $("#selected_category").html('category : ' + chosen_category);
+        $("#start").show();
+        console.log(e.currentTarget.id);
+        chosen_category = e.currentTarget.id;
+        $(".selected_category").html('category : ' + chosen_category);
+        chosen_category_id = category_list[chosen_category];
+        console.log("id : " + chosen_category_id);
         start_trivia(chosen_category_id);
 
     });
