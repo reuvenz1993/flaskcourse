@@ -1,0 +1,36 @@
+.category
+{
+ margin: 30px;
+ cursor: pointer;
+ background-color: #eaf3f0;
+};
+
+#game
+{
+ background-color: lavender !important;
+ border: 10px !important;
+ border-radius: 15% !important;
+ border-style: solid !important;
+ display: none !important;
+};
+
+#selected_category {color: lightgray; text-shadow: antiquewhite; font-style: italic;}
+
+button.answer
+{
+ background-color: #eaf2f9;
+};
+
+.button.answer
+{
+ width: 100%
+}
+
+.answer { background-color:#eaf2f9; max-width: 800px;}
+
+.answer:hover {
+    background-color: #053e69;
+    color: white;
+  }
+
+#promo { max-height: 5cm;}

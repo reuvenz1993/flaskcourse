@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/Trivia.css')}}">
+
+<div id='promo' class="jumbotron">
+    <h1 class="display-4"> Trivia Game </h1>
+    <p class="lead">choose category</p>
+
+
+</div>
+
+    <div class="container" id='categories'>
+      <div class="row">
+
+        <div id='General' class="card category" style="width: 18rem;">
+            <img src="{{url_for('static',filename='img/General_Knowledge.jpg')}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">General Knowledge</h5>
+            </div>
+          </div>
+
+          <div id='Science' class="card category" style="width: 18rem;">
+            <img src="{{url_for('static',filename='img/Science.jpg')}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Science & Nature</h5>
+            </div>
+          </div>
+
+          <div id='Sports' class="card category" style="width: 18rem;">
+            <img src="{{url_for('static',filename='img/sports.jfif')}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Sports</h5>
+            </div>
+          </div>
+
+
+      </div>
+    </div>
+
+    <div id='game'>
+      <div class="container d-flex justify-content-center">
+          <div class="col-6 centered">
+              <div class="row">
+                  <h2 id='selected_category'> category : </h2>
+                  <br>
+              </div>
+              <div class="row">
+                  <h2>Question : <span id='the_question'></span> </h2>
+                  <br>
+              </div>
+
+
+              <div class="row">
+                  <h3>Answers :</h3>
+                  <br>
+                  <button id='ans1' type="button" class="btn btn-lg btn-block answer">Block level button</button>
+                  <button id='ans2' type="button" class="btn btn-lg btn-block answer">Block level button</button>
+                  <button id='ans3' type="button" class="btn btn-lg btn-block answer">Block level button</button>
+                  <button id='ans4' type="button" class="btn btn-lg btn-block answer">Block level button</button>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="{{url_for('static',filename='js/trivia.js')}}" ></script>
+
+
+
+  {% endblock %}
