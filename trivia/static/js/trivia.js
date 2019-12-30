@@ -6,6 +6,7 @@ var chosen_category_id = ""
 var question = ""
 
 $("#game").hide();
+$("#start").hide();
 
 $(document).ready(function () {
 
@@ -18,7 +19,7 @@ $(document).ready(function () {
         $("#game").show();
         $("#categories").hide();
         $("#promo").hide();
-        $("#selected_category").html('category :' + chosen_category);
+        $("#selected_category").html('category : ' + chosen_category);
         start_trivia(chosen_category_id);
 
     });
