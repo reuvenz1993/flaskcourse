@@ -16,21 +16,21 @@
 
 #selected_category {color: lightgray; text-shadow: antiquewhite; font-style: italic;}
 
-button.answer
-{
- background-color: #eaf2f9;
-};
-
-.button.answer
-{
- width: 100%
-}
-
 .answer { background-color:#eaf2f9; max-width: 800px;}
 
 .answer:hover {
     background-color: #053e69;
     color: white;
-  }
+  };
 
 #promo { max-height: 5cm;}
+
+.correct
+{
+  background-color: green
+};
+
+.wrong
+{
+  background-color: red
+};

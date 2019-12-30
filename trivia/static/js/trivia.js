@@ -68,9 +68,13 @@ $( ".btn" ).click(function(e) {
     if ( pick == question_data['correct_answer'])
     {
         correct = true;
-        $('#'+e.target.id).css('background-color', 'green');
+        $('#'+e.target.id).toggleClass("answer");
+        $('#'+e.target.id).toggleClass("correct");
         console.log('this is the right ans');
-    } else {$('#'+e.target.id).css('background-color', 'red'); };
+    } else
+    {
+        $('#'+e.target.id).toggleClass("wrong");
+    };
 
     setTimeout(next_question, 2000);
   });
