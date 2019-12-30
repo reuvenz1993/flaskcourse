@@ -4,7 +4,8 @@ category_list =  {"General":9 , "Science":17 , "Sports":21};
 var chosen_category = "";
 var chosen_category_id = ""
 var question = ""
-answers = [ '#ans1' , '#ans2' , '#ans3' , '#ans4' ];
+var answers = [ '#ans1' , '#ans2' , '#ans3' , '#ans4' ];
+var score ;
 
 $("#start").hide();
 $("#game").hide();
@@ -32,6 +33,8 @@ $("#start-btn").click(function (e) {
     $("#promo").hide();
     $("#start").hide();
     $("#game").show();
+    score = 0 ;
+    $('#score').html(score);
     start_trivia(chosen_category_id);
 });
 
@@ -75,16 +78,18 @@ function shuffle(a) {
 $( ".answer" ).click(function(e) {
     console.log(e.target.innerText);
     pick = e.target.innerText;
-    for answer in ()
+    
     if ( pick == question_data['correct_answer'])
     {
         correct = true;
         $('#'+e.target.id).css('background-color' , 'green');
         console.log('this is the right ans');
-    } else 
+        score += 5 * (question_data['difficulty'] =="easy") + 10 * (question_data['difficulty'] =="medium") + 15 * (question_data['difficulty'] =="hard");
+        $('#score').html(score);
+    } else
     {
         $('#'+e.target.id).css('background-color' , 'red');
-        for 
+        answers.forEach(check_if_correct);
     };
 
     $('.answer').attr("disabled", true);
@@ -98,4 +103,10 @@ $( ".answer" ).click(function(e) {
     start_trivia(chosen_category_id);
   };
 
-  
+  function check_if_correct(item, index)
+  {
+      if ( $(item).html() == question_data['correct_answer'] )
+      {
+          $(item).css('background-color' , 'green');
+      }
+  };
