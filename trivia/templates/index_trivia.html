@@ -4,7 +4,6 @@
 
 <div id='promo' class="jumbotron">
     <h1 class="display-4"> Trivia Game </h1>
-    <p class="lead">choose category</p>
 
 
 </div>
@@ -37,15 +36,15 @@
       </div>
     </div>
 
-    <div id='game'>
-      <div class="container d-flex justify-content-center">
+    <div id='game' class='container'>
+      <div class="d-flex justify-content-center">
           <div class="col-6 centered">
               <div class="row">
                   <h2 class='selected_category'> category : </h2>
                   <br>
               </div>
               <div class="row">
-                  <h2>Question : <span id='the_question'></span> </h2>
+                  <h2>Question : <br> <span id='the_question'></span> </h2>
                   <br>
               </div>
 
@@ -61,16 +60,19 @@
           </div>
       </div>
     </div>
-    <div>
-      <div id='start' class='container h-75 d-flex justify-content-center'>
-        <div id="start-padding" class="d-flex">
-            <div id='start-grid' class="align-self-center">
+
+    <!--
+    <div id='start' class='container' >
+      <div class='justify-content-center'>
+        <div class="d-flex">
+            <div class="align-self-center">
               <h2 class='selected_category'> category : </h2>
               <button id="start-btn" type="button" class="btn btn-primary btn-lg">Start</button>
             </div>
         </div>
       </div>
     </div>
+    -->
 
     <script type="text/javascript" src="{{url_for('static',filename='js/trivia.js')}}" ></script>
 

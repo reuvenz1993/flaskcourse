@@ -1,3 +1,4 @@
+/*
 var a = 100
 var q = 1
 category_list =  {"General":9 , "Science":17 , "Sports":21};
@@ -5,7 +6,6 @@ var chosen_category = "";
 var chosen_category_id = ""
 var question = ""
 
-$("#game").toggle();
 $("#start").hide();
 
 $(document).ready(function () {
@@ -89,3 +89,5 @@ $( ".answer" ).click(function(e) {
     $('.answer').removeAttr( 'style' );
     start_trivia(chosen_category_id);
   };
+
+  */
