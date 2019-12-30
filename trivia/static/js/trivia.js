@@ -77,7 +77,6 @@ $( ".btn" ).click(function(e) {
 
   function next_question()
   {
-      
     $('.answer').removeAttr( 'style' );
     start_trivia(chosen_category_id);
   };
