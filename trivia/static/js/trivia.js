@@ -7,6 +7,8 @@ var question = ""
 var answers = [ '#ans1' , '#ans2' , '#ans3' , '#ans4' ];
 var score ;
 
+<script src="/bower_components/jquery.countdown/dist/jquery.countdown.js"></script>
+
 $("#start").hide();
 $("#game").hide();
 
