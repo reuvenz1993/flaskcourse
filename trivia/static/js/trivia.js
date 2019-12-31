@@ -35,8 +35,7 @@ $("#start-btn").click(function (e) {
     $("#game").show(2000);
     score = 0 ;
     $('#score').html(score);
-    $('#score').fadeOut();
-    $('#score').fadeIn();
+
     start_trivia(chosen_category_id);
 });
 
@@ -54,12 +53,13 @@ function start_trivia(id)
             ans_list = question_data["incorrect_answers"] ;
             ans_list[ans_list.length] = question_data['correct_answer'];
             shuffle(ans_list);
-            $('#Answers').fadeIn();
             $('#the_question').html(quest);
             $('#ans1').html(ans_list[0]);
             $('#ans2').html(ans_list[1]);
             $('#ans3').html(ans_list[2]);
             $('#ans4').html(ans_list[3]);
+            $('#the_question').fadeTo( 300 , 1 );
+            $('#Answers').fadeTo( 300 , 1 );
 
         }
     });
@@ -88,7 +88,7 @@ $( ".answer" ).click(function(e) {
         $('#'+e.target.id).css('background-color' , 'green');
         console.log('this is the right ans');
         score += 5 * (question_data['difficulty'] =="easy") + 10 * (question_data['difficulty'] =="medium") + 15 * (question_data['difficulty'] =="hard");
-        $('#score').html(score);
+        $('#score').fadeOut(500 , function() {$('#score').html(score).fadeIn(500); }  );
     } else
     {
         $('#'+e.target.id).css('background-color' , 'red');
@@ -97,7 +97,8 @@ $( ".answer" ).click(function(e) {
 
     $('.answer').attr("disabled", true);
     setTimeout(next_question, 2000);
-    $('#Answers').fadeOut();
+    $('#Answers').fadeTo( 2200, 0 );
+    $('#the_question').fadeTo( 2200 , 0 );
   });
 
   function next_question()
