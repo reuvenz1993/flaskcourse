@@ -60,8 +60,8 @@ function start_trivia(id)
             $('#ans2').html(ans_list[1]);
             $('#ans3').html(ans_list[2]);
             $('#ans4').html(ans_list[3]);
-            $('#the_question').fadeTo( 300 , 1 );
-            $('#Answers').fadeTo( 300 , 1 );
+            $('#the_question , #Answers').fadeTo( 300 , 1 );
+            //$('#Answers').fadeTo( 300 , 1 );
             start_count_down(30);
 
         }
@@ -104,8 +104,8 @@ $( ".answer" ).click(function(e) {
 
     $('.answer').attr("disabled", true);
     setTimeout(next_question, 2000);
-    $('#Answers').fadeTo( 2200, 0 );
-    $('#the_question').fadeTo( 2200 , 0 );
+    $('#Answers , #the_question').fadeTo( 2200, 0 );
+    //$('#the_question').fadeTo( 2200 , 0 );
   });
 
   function next_question()
