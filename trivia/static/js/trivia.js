@@ -13,9 +13,9 @@ $("#game").hide();
 $(document).ready(function () {
 
     $('div.card.category').click(function (e) {
-        $("#categories").hide();
-        $("#promo").hide();
-        $("#start").show();
+        $("#categories").hide(1000);
+        $("#promo").hide(1000);
+        $("#start").show(1000);
         console.log(e.currentTarget.id);
         chosen_category = e.currentTarget.id;
         chosen_category_id = category_list[chosen_category];
@@ -31,10 +31,12 @@ $("#start-btn").click(function (e) {
     e.preventDefault();
     $("#categories").hide();
     $("#promo").hide();
-    $("#start").hide();
-    $("#game").show();
+    $("#start").hide(1000);
+    $("#game").show(2000);
     score = 0 ;
     $('#score').html(score);
+    $('#score').fadeOut();
+    $('#score').fadeIn();
     start_trivia(chosen_category_id);
 });
 
@@ -52,6 +54,7 @@ function start_trivia(id)
             ans_list = question_data["incorrect_answers"] ;
             ans_list[ans_list.length] = question_data['correct_answer'];
             shuffle(ans_list);
+            $('#Answers').fadeIn();
             $('#the_question').html(quest);
             $('#ans1').html(ans_list[0]);
             $('#ans2').html(ans_list[1]);
@@ -94,6 +97,7 @@ $( ".answer" ).click(function(e) {
 
     $('.answer').attr("disabled", true);
     setTimeout(next_question, 2000);
+    $('#Answers').fadeOut();
   });
 
   function next_question()
