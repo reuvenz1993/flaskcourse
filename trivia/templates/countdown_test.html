@@ -22,6 +22,7 @@
 
     <script type="text/javascript">
     var time_given = 30 ;
+    var expired = false;
 
 function startcountdown (time)
 {
@@ -29,11 +30,11 @@ function startcountdown (time)
         $('#progressBar').val(time) ;
         temp = $('#progressBar').val() ;
         $('#clock').html(temp);
-        time -= 1;
         if(time <= 0){
           clearInterval(downloadTimer);
           $('#clock').html('expired');
         }
+        time -= 1;
       }, 1000);
 
 };

@@ -6,8 +6,8 @@ var chosen_category_id = ""
 var question = ""
 var answers = [ '#ans1' , '#ans2' , '#ans3' , '#ans4' ];
 var score ;
+var downloadTimer ;
 
-<script src="/bower_components/jquery.countdown/dist/jquery.countdown.js"></script>
 
 $("#start").hide();
 $("#game").hide();
@@ -62,6 +62,7 @@ function start_trivia(id)
             $('#ans4').html(ans_list[3]);
             $('#the_question').fadeTo( 300 , 1 );
             $('#Answers').fadeTo( 300 , 1 );
+            start_count_down(30);
 
         }
     });
@@ -82,6 +83,7 @@ function shuffle(a) {
 
 $( ".answer" ).click(function(e) {
     console.log(e.target.innerText);
+    clearInterval(downloadTimer);
     pick = e.target.innerText;
     $('#'+e.target.id).css('border' , '2px solid black');
     
@@ -119,3 +121,21 @@ $( ".answer" ).click(function(e) {
           $(item).css('background-color' , 'green');
       }
   };
+
+  function start_count_down (time)
+{
+    downloadTimer = setInterval(function(){
+        //$('#progressBar').val(time) ;
+        //temp = $('#progressBar').val() ;
+        $('#clock').html(time);
+        if(time <= 0){
+          clearInterval(downloadTimer);
+          $('#clock').html('expired');
+          answers.forEach(check_if_correct);
+          setTimeout(next_question, 2000);
+          
+        }
+        time -= 1;
+      }, 1000);
+
+};
