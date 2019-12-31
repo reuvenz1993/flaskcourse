@@ -35,3 +35,9 @@
   font-weight: 300;
   font-style: italic ;
 }
+
+#Time_left
+{
+  position: absolute;
+  right: 10px;
+}
