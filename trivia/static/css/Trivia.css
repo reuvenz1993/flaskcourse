@@ -28,3 +28,10 @@
 #start-padding {padding-bottom: 10%;}
 
 #start-btn {margin-top: 1cm;}
+
+#score_add
+{
+  color: green;
+  font-weight: 300;
+  font-style: italic ;
+}

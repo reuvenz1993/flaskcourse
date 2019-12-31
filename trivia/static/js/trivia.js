@@ -81,14 +81,17 @@ function shuffle(a) {
 $( ".answer" ).click(function(e) {
     console.log(e.target.innerText);
     pick = e.target.innerText;
+    $('#'+e.target.id).css('border' , '2px solid black');
     
     if ( pick == question_data['correct_answer'])
     {
         correct = true;
         $('#'+e.target.id).css('background-color' , 'green');
         console.log('this is the right ans');
-        score += 5 * (question_data['difficulty'] =="easy") + 10 * (question_data['difficulty'] =="medium") + 15 * (question_data['difficulty'] =="hard");
-        $('#score').fadeOut(500 , function() {$('#score').html(score).fadeIn(500); }  );
+        score_addition =  5 * (question_data['difficulty'] =="easy") + 10 * (question_data['difficulty'] =="medium") + 15 * (question_data['difficulty'] =="hard");
+        $('#score_add').html("+" + score_addition).fadeIn(200).fadeOut(1200)
+        score += score_addition;
+        $('#score').fadeOut(500 , function() {$('#score').html(score).fadeIn(200); }  );
     } else
     {
         $('#'+e.target.id).css('background-color' , 'red');
@@ -103,8 +106,7 @@ $( ".answer" ).click(function(e) {
 
   function next_question()
   {
-    $('.answer').removeAttr( 'style' );
-    $('.answer').removeAttr( 'disabled' );
+    $('.answer').removeAttr( 'style disabled border' );
     start_trivia(chosen_category_id);
   };
 
