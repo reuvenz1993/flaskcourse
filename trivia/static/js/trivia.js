@@ -8,6 +8,8 @@ var answers = [ '#ans1' , '#ans2' , '#ans3' , '#ans4' ];
 var score ;
 var downloadTimer ;
 var given_time = 30 ;
+var given_mistakes = 3 ;
+var mistakes = 0 ;
 
 $.ajax({
     type: "get",
@@ -108,6 +110,7 @@ $( ".answer" ).click(function(e) {
     } else
     {
         $('#'+e.target.id).css('background-color' , 'red');
+        mistakes = mistakes + 1 ;
         answers.forEach(check_if_correct);
     };
 
@@ -120,7 +123,12 @@ $( ".answer" ).click(function(e) {
   function next_question()
   {
     $('.answer').removeAttr( 'style disabled border' );
-    start_trivia(chosen_category_id);
+    $('#mistakes').html(mistakes);
+    if ( mistakes < 3 )
+    {
+        start_trivia(chosen_category_id);
+    }
+    else {console.log("Game Over");};
   };
 
   function check_if_correct(item, index)
@@ -141,6 +149,7 @@ $( ".answer" ).click(function(e) {
         if(time <= 0){
           clearInterval(downloadTimer);
           $('#clock').html('expired');
+          mistakes = mistakes + 1 ;
           answers.forEach(check_if_correct);
           setTimeout(next_question, 2000);
         }
