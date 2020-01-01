@@ -132,6 +132,7 @@ $( ".answer" ).click(function(e) {
         console.log("Game Over");
         $("#game").hide();
         $("#summary").show();
+        $('#final_score').html(score);
     };
   };
 
