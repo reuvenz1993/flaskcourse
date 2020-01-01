@@ -7,6 +7,7 @@ var question = ""
 var answers = [ '#ans1' , '#ans2' , '#ans3' , '#ans4' ];
 var score ;
 var downloadTimer ;
+var given_time = 30 ;
 
 $.ajax({
     type: "get",
@@ -70,7 +71,7 @@ function start_trivia(id)
             $('#ans4').html(ans_list[3]);
             $('#the_question , #Answers').fadeTo( 300 , 1 );
             //$('#Answers').fadeTo( 300 , 1 );
-            start_count_down(30);
+            start_count_down(given_time);
 
         }
     });
@@ -136,12 +137,12 @@ $( ".answer" ).click(function(e) {
         //$('#progressBar').val(time) ;
         //temp = $('#progressBar').val() ;
         $('#clock').html(time);
+        $('.progress-bar').width((time/given_time ) * 100 + "%");
         if(time <= 0){
           clearInterval(downloadTimer);
           $('#clock').html('expired');
           answers.forEach(check_if_correct);
           setTimeout(next_question, 2000);
-          
         }
         time -= 1;
       }, 1000);
