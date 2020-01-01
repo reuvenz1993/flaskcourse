@@ -20,8 +20,7 @@ $.ajax({
     }});
 
 
-$("#start").hide();
-$("#game").hide();
+$("#start , #game , #summary").hide();
 
 $(document).ready(function () {
 
@@ -124,11 +123,16 @@ $( ".answer" ).click(function(e) {
   {
     $('.answer').removeAttr( 'style disabled border' );
     $('#mistakes').html(mistakes);
-    if ( mistakes < 3 )
+    if ( mistakes < given_mistakes )
     {
         start_trivia(chosen_category_id);
     }
-    else {console.log("Game Over");};
+    else
+    {
+        console.log("Game Over");
+        $("#game").hide();
+        $("#summary").show();
+    };
   };
 
   function check_if_correct(item, index)
