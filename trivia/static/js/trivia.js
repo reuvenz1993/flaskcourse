@@ -8,6 +8,14 @@ var answers = [ '#ans1' , '#ans2' , '#ans3' , '#ans4' ];
 var score ;
 var downloadTimer ;
 
+$.ajax({
+    type: "get",
+    url: 'https://opentdb.com/api_token.php?command=request' ,
+    success: function (response) {
+        token_data = response;
+        token = response['token'];
+    }});
+
 
 $("#start").hide();
 $("#game").hide();
@@ -44,7 +52,7 @@ $("#start-btn").click(function (e) {
 function start_trivia(id)
 {
     console.log("start trivia func");
-    URL ="https://opentdb.com/api.php?amount=1&category=" + id + "&type=multiple";
+    URL ="https://opentdb.com/api.php?amount=1&category=" + id + "&type=multiple" + "&token=" + token;
     console.log(URL)
     $.ajax({
         type: "get",
