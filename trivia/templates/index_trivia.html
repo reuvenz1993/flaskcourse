@@ -44,7 +44,7 @@
                   <br>
               </div>
               <div class="row">
-                  <h3> Score : <span id='score'></span> <span id='score_add'></span> </h2>
+                 <!-- <h3> Score : <span id='score'></span> <span id='score_add'></span> </h2>-->
                   <br>
               </div>
               <div class="row">
@@ -54,7 +54,16 @@
 
 
               <div id='Answers' class="row">
-                  <p><h3>Answers :</h3> <h4 id='Time_left'>Time left : <span id='clock'>30</span> </h4>  </p>
+                <div class="col">
+                  <h4>Answers :</h4>
+                </div>
+                <div class="col">
+                  <h4> Score : <span id='score'></span> <span id='score_add'></span> </h4>
+                </div>
+                <div id='Time_left' class="col">
+                  <p id='clock'>30</p>
+                </div>
+                  <!--<p><h3>Answers :</h3> <h4 id='Time_left'>Time left : <span id='clock'>30</span> </h4>  </p> -->
                   <br>
                   <button id='ans1' type="button" class="btn btn-lg btn-block answer">Block level button</button>
                   <button id='ans2' type="button" class="btn btn-lg btn-block answer">Block level button</button>
