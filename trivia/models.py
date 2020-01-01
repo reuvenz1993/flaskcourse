@@ -1,4 +1,4 @@
-from trivia import db,
+from trivia import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 # By inheriting the UserMixin we get access to a lot of built-in attributes
@@ -14,7 +14,7 @@ from flask_login import UserMixin
 class Score(db.Model, UserMixin):
 
     # Create a table in the db
-    __tablename__ = 'scores'
+    __tablename__ = 'Score'
 
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(64))

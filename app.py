@@ -11,10 +11,15 @@ def index_trivia():
 
 @app.route('/submit_to_scoreboard', methods=['GET', 'POST'])
 def submit_to_scoreboard():
-    score = Score( name=POST['name'] , )
-    db.session.add(score)
+    data = request.get_data()
+    print  (data)
+    name = data['name']
+    score = data['score']
+    new_score = Score( name = name , score = score)
+    db.session.add(new_score)
     db.session.commit()
-    return json.dumps("test")
+    print (new_score)
+    return json.dumps(new_score)
 
 
 #@app.route('/quest')
