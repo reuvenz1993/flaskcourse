@@ -162,3 +162,20 @@ $( ".answer" ).click(function(e) {
       }, 1000);
 
 };
+
+$('#submit_scoreboard').click(function (e) { 
+    e.preventDefault();
+    name_to_submit = $('#your_name').val();
+    console.log('name_to_submit');
+    /*
+    $.ajax({
+        type: "post",
+        url: '/submit_to_scoreboard' ,
+        success: function (response) {
+            token_data = response;
+            token = response['token'];
+        }});
+        */
+
+    
+});
