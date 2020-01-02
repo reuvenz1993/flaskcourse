@@ -11,6 +11,7 @@ var given_time = 30 ;
 var given_mistakes = 3 ;
 var mistakes = 0 ;
 
+
 $.ajax({
     type: "get",
     url: 'https://opentdb.com/api_token.php?command=request' ,
