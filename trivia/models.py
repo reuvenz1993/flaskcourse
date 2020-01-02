@@ -8,9 +8,6 @@ from flask_login import UserMixin
 # is_anonymous()
 # get_id()
 
-
-
-
 class Score(db.Model, UserMixin):
 
     # Create a table in the db
@@ -24,8 +21,8 @@ class Score(db.Model, UserMixin):
         self.name = name
         self.score = score
 
-    def __repr__(self):
-		return '{} - {}'.format(self.name, self.score)
+#def __repr__(self):
+#	return '{} - {}'.format(self.name, self.score)
 
-	def as_dict(self):
-		return {'name': self.name }
+    def as_dict(self):
+        return {'name': self.name , 'score': self.score }

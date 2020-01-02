@@ -1,8 +1,9 @@
 import requests
 from trivia import app,db
-from flask import render_template, redirect, request, url_for, flash,abort , session  , escape , make_response
+from flask import render_template, redirect, request, url_for, flash,abort , session  , escape , make_response , jsonify
 import json
 from trivia.models import Score
+from sqlalchemy import desc
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -19,9 +20,10 @@ def submit_to_scoreboard():
     db.session.add(new_score)
     db.session.commit()
     print (new_score)
-    scoreboard = Score.query.all()
-    print (scoreboard)
-    return json.dumps(scoreboard)
+    scoreboard_res = Score.query.order_by(desc(Score.score)).all()
+    print (scoreboard_res)
+    scoreboard = [i.as_dict() for i in scoreboard_res]
+    return jsonify(scoreboard)
 
 
 #@app.route('/quest')

@@ -166,15 +166,34 @@ $( ".answer" ).click(function(e) {
 $('#submit_scoreboard').click(function (e) { 
     e.preventDefault();
     name_to_submit = $('#your_name').val();
-    $('#your_name').val();
-    console.log('name_to_submit');
+    $('#submit_scoreboard').prop('disabled', true);
+    $('#your_name').prop('disabled', true);
     $.ajax({
         type: "post",
         url: '/submit_to_scoreboard' ,
         data: { 'name' : name_to_submit , 'score' : score } ,
         success: function (response) {
             console.log('ajax complete');
-            console.log(response);
+            scoreboard = response;
+            update_scoreboard(scoreboard)
         }});
 
 });
+
+function update_scoreboard(scoreboard)
+{
+    $('#table_outer_div').remove()
+    var table_outer_div = $("<div id='table_outer_div' class='justify-content-center row'> </div>");
+    $('#summary').append(table_outer_div);
+    var table_div = $("<table id='table_div' class='centered col-6 table text-center'> </table>");
+    $('#table_outer_div').append(table_div);
+    var content = "<thead class='thead-dark'> <tr> <th scope='col'>" + '#' + "</th> <th scope='col'>" + 'name' + "</th> <th scope='col'>" +  'score' + '</th></tr></tr></thead>';
+    content += "<tbody>"
+    for(i=0; i<scoreboard.length; i++){
+        place = i + 1
+        content += "<tr><th scope='row'>" + place + "</th> <th scope='row'>" +  scoreboard[i]['name'] + "</th> <td>" +  scoreboard[i]['score'] + '</td>';
+    }
+    content += "</tbody>"
+
+    $('#table_div').append(content);
+};
