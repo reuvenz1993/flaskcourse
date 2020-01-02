@@ -11,19 +11,17 @@ def index_trivia():
 
 @app.route('/submit_to_scoreboard', methods=['GET', 'POST'])
 def submit_to_scoreboard():
-    name = request.form['name']
-    score = request.form['score']
+    _name = request.form['name']
+    _score = int ( request.form['score'] )
     print('hi')
     print('hi')
-    #data = request.get_data()
-    #print  (data)
-    #name = data.get
-    #score = data['score']
-    #new_score = Score( name = name , score = score)
-    #db.session.add(new_score)
-    #db.session.commit()
-    #print (new_score)
-    return json.dumps("newtest")
+    new_score = Score( name = _name , score = _score)
+    db.session.add(new_score)
+    db.session.commit()
+    print (new_score)
+    scoreboard = Score.query.all()
+    print (scoreboard)
+    return json.dumps(scoreboard)
 
 
 #@app.route('/quest')

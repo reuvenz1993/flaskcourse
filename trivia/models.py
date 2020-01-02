@@ -23,3 +23,9 @@ class Score(db.Model, UserMixin):
     def __init__(self, name, score):
         self.name = name
         self.score = score
+
+    def __repr__(self):
+		return '{} - {}'.format(self.name, self.score)
+
+	def as_dict(self):
+		return {'name': self.name }
