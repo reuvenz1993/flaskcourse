@@ -7,7 +7,9 @@
 }
 
 
-.selected_category {color: lightgray; text-shadow: antiquewhite; font-style: italic;}
+.selected_category {color: lightgray; text-shadow: antiquewhite; font-style: italic; }
+
+.cat_start {margin-top: 20%;}
 
 .answer { background-color:#eaf2f9; max-width: 800px;}
 
@@ -47,3 +49,7 @@
 .progress {margin-top: 10px; height: 5px;}
 
 .summary {padding-top: 25%;}
+
+h5 {margin :.6rem }
+
+#cat { margin-top: 10px;}

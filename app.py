@@ -1,4 +1,4 @@
-from trivia import app
+from trivia import app,db
 import trivia.views
 
 if __name__ == '__main__':

@@ -37,26 +37,27 @@
     </div>
 
     <div id='game' class='container'>
-      <div class="d-flex justify-content-center">
-          <div class="col-9 centered">
-              <div class="row">
-                  <h2 class='selected_category'> category : </h2>
-                  <br>
+      <div class="align-content-center row">
+          <div class="col-10 col-md-8 offset-1 offset-md-2 text-center">
+            <div id='cat' class="row">
+              <div class="col">
+                <h5 style="margin-top: 0"; class='selected_category'> category : </h5>
               </div>
-              <div class="row">
-                  <h2>Question : <br> <span id='the_question'></span> </h2>
-                  <br>
+              <div class="col">
+                <a href="{{url_for('index')}}"> <button type="button" class="btn btn-outline-info btn-sm">change category</button> </a>
               </div>
-
+            </div>
+              <br>
+              <h2>Question : <br> <span id='the_question'></span> </h2>
               <div class="row">
                 <div class="col">
                   <p> Score : <span id='score'></span> <span id='score_add'></span> </p>
                 </div>
-                <div class="col">
+                <div class="col-6">
                   <p> Mistakes : <span id='mistakes'>0</span> / 3 </p>
                 </div>
                 <div class="col">
-                  <p id='Time_left'> Time left : <span id='clock'>30</span> </p>
+                  <p id='Time_left'> Time : <span id='clock'>30</span> </p>
                 </div>
               </div>
                   <!--<p><h3>Answers :</h3> <h4 id='Time_left'>Time left : <span id='clock'>30</span> </h4>  </p> -->
@@ -79,44 +80,39 @@
 
 
     <div id='start' class='container' >
-      <div class='justify-content-center'>
-        <div class="d-flex">
-            <div class="align-self-center">
-              <h2 class='selected_category'> category : </h2>
-              <button id="start-btn" type="button" class="btn btn-primary btn-lg">Start</button>
-            </div>
-        </div>
+      <div class='align-content-center row start_center'>
+          <div class="col text-center">
+            <h2 class='cat_start'> category : </h2>
+            <button id="start-btn" type="button" class="btn btn-primary btn-lg">Start</button>
+          </div>
       </div>
     </div>
 
     <div id='summary' class="container ">
-      <div id='summary_submit' class="d-flex justify-content-center">
-        <div class="col-9 centered">
-            <div class="row justify-content-center">
-              <p>Game Over</p>
-            </div>
-            <div class="row justify-content-center">
-              <p>Your Score : <span id="final_score"></span></p>
-            </div>
-              <div class="row justify-content-center">
-                <div class="input-group mb-3 justify-content-center">
-                  <input id='your_name' type="text" class="form-control" placeholder="Enter your name to submit into scoreboard" aria-label="Enter your name to submit into scoreboard" aria-describedby="basic-addon2">
-                  </div>
-              </div>
-              <div class="row justify-content-center">
-                <div class="input-group mb-3 justify-content-center">
-                  <div class="input-group-append">
-                    <button id='submit_scoreboard' class="btn btn-outline-secondary" type="button">Button</button>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+      <div id='summary_submit' class="align-content-center row">
+        <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
+          <p>Game Over</p>
+          <p>Your Score : <span id="final_score"></span></p>
+          <div class="input-group mb-3 justify-content-center">
+            <input id='your_name' type="text" class="form-control" placeholder="Enter name to submit into scoreboard" aria-label="Enter name to submit into scoreboard" aria-describedby="basic-addon2">
+          </div>
+          <div class="input-group-append justify-content-center">
+            <button id='submit_scoreboard' class="btn btn-lg btn-success" type="button">Submit</button>
+          </div>
+          <hr>
+          <div class="input-group-append justify-content-center">
+            <a href="{{url_for('index')}}">
+              <button id='play_again' class="btn btn-primary btn-lg" type="button">Play again !</button>
+            </a>
+          </div>
+          <hr>
+          <p>Scoreboard :</p>
         </div>
       </div>
     </div>
 
     <script type="text/javascript" src="{{url_for('static',filename='js/trivia.js')}}" ></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
 

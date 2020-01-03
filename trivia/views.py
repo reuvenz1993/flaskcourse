@@ -6,8 +6,8 @@ from trivia.models import Score
 from sqlalchemy import desc
 
 @app.route('/', methods=['GET', 'POST'])
-def index_trivia():
-    return render_template('index_trivia.html')
+def index():
+    return render_template('index.html')
 
 @app.route('/submit_to_scoreboard', methods=['GET', 'POST'])
 def submit_to_scoreboard():
